@@ -51,12 +51,17 @@ async def on_ready():
     channel = client.get_channel(863757173812232202)  # tribe-log
 
     while True:
+        if (pyautogui.locateOnScreen('parasaur.png', region=(1050, 20, 800, 30), confidence=0.7)):
+            print("Parasaur detected an enemy!")
+            await channel.send("Parasaur detected an enemy!\n@here")
+            time.sleep(300)
+            print("Sleeping for 5 minutes")
         if not (pyautogui.locateOnScreen('screenshot.png', region=(1340, 184, 455, 70), confidence=0.7)):
             destroyed = pyautogui.locateOnScreen('destroyed.png', region=(1340, 184, 455, 70), confidence=0.7)
             if destroyed != None:
                 print("Something was destroyed!")
                 pyautogui.screenshot('screenshot.png', region=(1340, destroyed[1]-20, 455, 32))
-                #await channel.send("Something was destroyed!\n@here")
+                await channel.send("Something was destroyed!\n@here")
                 await channel.send(file=discord.File("screenshot.png"))
 
-client.run("TOKEN")
+client.run("ODYzMDM1OTA3MjA0NzEwNDEw.YOhC0g.CnRU5ZXSqEzP1BMmD2Tdip8YZ64")
