@@ -64,4 +64,4 @@ async def on_ready():
                 await channel.send("Something was destroyed!\n@here")
                 await channel.send(file=discord.File("screenshot.png"))
 
-client.run("ODYzMDM1OTA3MjA0NzEwNDEw.YOhC0g.CnRU5ZXSqEzP1BMmD2Tdip8YZ64")
+client.run(TOKEN)
